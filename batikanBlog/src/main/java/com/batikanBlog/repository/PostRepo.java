@@ -1,0 +1,19 @@
+package com.batikanBlog.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.batikanBlog.model.Category;
+import com.batikanBlog.model.Post;
+import com.batikanBlog.model.User;
+
+import java.util.List;
+
+public interface PostRepo extends JpaRepository<Post,Integer> {
+
+    //find post by user
+    List<Post> findAllByUser(User user);
+
+    //find post by category
+    List<Post> findAllByCategory(Category category);
+
+}
